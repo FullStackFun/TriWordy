@@ -1,0 +1,150 @@
+* {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.mega {
+    max-width: 600px;
+    min-width: 300px;
+    margin: auto;
+
+}
+
+
+body {
+    background-color: #121213;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.title-box {
+    text-align: center;
+    width: 90%;
+    border-bottom: solid 1px #3a3a3c;
+}
+
+.game-box {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tile-box {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.key-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 2%;
+    
+}
+
+.key-box button {
+    width: 50px;
+    height: 58px;
+    border-radius: 4px;
+    border: none;
+    background-color: #818384;
+    margin: 4px;   
+    
+}
+
+.key-box button:nth-child(27), button:nth-child(28) {
+    width: 108px;
+}
+
+.tile-box .tile {
+    width: 162px;
+    height: 81px;
+    color: white;
+    border: 2px solid#3a3a3c;
+    box-sizing: border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+
+.tile-box div {
+    display: flex;
+}
+
+.message-box {
+    height: 30px;
+}
+
+.message-box p {
+    background-color: #818384;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0px;
+}
+
+.language-box {
+    height: 5px;
+}
+
+.language-box p {
+    background-color: #3a3a3c;
+    border-radius: 10px;
+    padding: 10px;
+    margin: -30px;
+}
+
+.gray-overlay {
+    background-color: #3a3a3c !important;
+    border: none;
+}
+
+.yellow-overlay {
+    background-color: #b59f3a !important;
+    border: none;
+}
+
+.green-overlay {
+    background-color: #538d4e !important;
+    border: none;
+}
+
+.tile.flip {
+    animation: 0.5s linear flipping;
+}
+
+@keyframes flipping {
+    0% {transform: rotateX(0deg)}
+    50%{transform: rotateX(90deg)}
+    100%{transform: rotateX(0deg)}
+    
+}
+
+a:hover {
+    color: #3a3a3c !important;
+    text-decoration: none;
+    }
+a {
+    color: #301934 !important;
+    text-decoration: none;
+    }
+         
+.ending {
+  
+    max-width: 500px;
+    text-align: center;
+    margin: auto;
+    font-size: 50%;
+
+    }

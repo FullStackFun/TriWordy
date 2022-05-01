@@ -6,9 +6,9 @@ let languageDisplay = document.querySelector('.language-box');
 let keys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Backspace', 'Enter'];
 
 let triwordle = [
-    ['SUPER', 'HAPPY', 'LOOKS', 'BERRY', 'TABLE', 'TIRED', 'BAKER', 'TIGER', 'PHONE', 'PARTY', 'TIMER', 'bossy', 'boxer', 'bunny', 'solid', 'cheer', 'smile', 'angry', 'timid', 'cloud', 'check', 'bliss', 'tough', 'peace', 'water', 'house', 'voice', 'bunny', 'buddy', 'quail', 'sunny', 'ready', 'array', 'apple', 'never'], 
-     ['feliz', 'tarde', 'bueno', 'miedo', 'volar', 'comer', 'vivir', 'noche', 'zorro', 'casco', 'barco', 'fresa', 'mundo', 'pardo', 'gusto', 'ganas', 'tener', 'salir', 'reloj', 'gorro', 'pluma', 'papel', 'color', 'aviso', 'negro', 'claro', 'lunes', 'libre', 'valor', 'leche', 'lapiz', 'tengo', 'arroz', 'lavar', 'pedir'],
-     ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'piano', 'fleur', 'pizza', 'glace', 'laver', 'doigt']
+    ['SUPER', 'HAPPY', 'LOOKS', 'BERRY', 'TABLE', 'TIRED', 'BAKER', 'TIGER', 'PHONE', 'PARTY', 'TIMER', 'bossy', 'boxer', 'bunny', 'solid', 'cheer', 'smile', 'angry', 'timid', 'cloud', 'check', 'bliss', 'tough', 'peace', 'water', 'house', 'voice', 'bunny', 'buddy', 'quail', 'sunny', 'ready', 'array', 'apple', 'never', 'today', 'sweet', 'slide'], 
+     ['feliz', 'tarde', 'bueno', 'miedo', 'volar', 'comer', 'vivir', 'noche', 'zorro', 'casco', 'barco', 'fresa', 'mundo', 'pardo', 'gusto', 'ganas', 'tener', 'salir', 'reloj', 'gorro', 'pluma', 'papel', 'color', 'aviso', 'negro', 'claro', 'lunes', 'libre', 'valor', 'leche', 'lapiz', 'tengo', 'arroz', 'lavar', 'pedir', 'arbol', 'mirar', 'medir'],
+     ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'piano', 'fleur', 'pizza', 'glace', 'laver', 'doigt', 'chant', 'neige', 'fuite']
  ]
  let randomizer = Math.floor(Math.random() * (triwordle.flat().length)   );
  let wordle = triwordle.flat()[randomizer].toUpperCase();
@@ -102,13 +102,20 @@ let checkRow = () => {
             seen = true;
             return;
         } else {
+            // if (triwordle.flat().includes(wordle.toLowerCase()) == false || triwordle.flat().includes(wordle.toUpperCase()) == false) {
+            //     showMessage('Word not found. Palabra no encontrada. Mot pas trouvé');
+            //     showLang();
+            //     currentTile = 0;
+            //     currentRow--;
+            // }
+
             if (currentRow >=5) {
                 isGameOver = true;
                
                 showMessage('Game over. Fin del juego. Fin du jeu. Wordle = ' + wordle);
                 seen = true;
                 return;
-            } if (currentRow < 5) {
+            } else if (currentRow < 5) {
                 currentRow++;
                 langSeen = false;
                 showLang();

@@ -180,7 +180,7 @@ keys.forEach(keyId => {
     let buttonElement = document.createElement('button');
     buttonElement.textContent = keyId;
     buttonElement.setAttribute('id', keyId);
-    buttonElement.addEventListener('click', () => handleClick(key));
+    buttonElement.addEventListener('click', () => handleClick(keyId));
     keyboard.append(buttonElement)
 })
 

@@ -3,15 +3,16 @@ let keyboard = document.querySelector('.key-box');
 let messageDisplay = document.querySelector('.message-box');
 let languageDisplay = document.querySelector('.language-box');
 
-let keys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Backspace', 'Enter / Entrée'];
+let keys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Backspace', 'Enter'];
 
 let triwordle = [
-    ['SUPER', 'HAPPY', 'LOOKS', 'BERRY', 'TABLE', 'TIRED', 'BAKER', 'TIGER', 'PHONE', 'PARTY', 'TIMER', 'bossy', 'boxer', 'bunny', 'solid', 'cheer', 'smile', 'angry', 'timid', 'cloud', 'check', 'bliss', 'tough', 'peace', 'water', 'house', 'voice', 'bunny', 'buddy', 'quail', 'sunny', 'ready'], 
-     ['feliz', 'tarde', 'bueno', 'miedo', 'volar', 'comer', 'vivir', 'noche', 'zorro', 'casco', 'barco', 'fresa', 'mundo', 'pardo', 'gusto', 'ganas', 'tener', 'salir', 'reloj', 'gorro', 'pluma', 'papel', 'color', 'aviso', 'negro', 'claro', 'lunes', 'libre', 'valor', 'leche', 'lapiz', 'tengo', 'arroz'],
-     ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'piano', 'fleur', 'pizza']
+    ['SUPER', 'HAPPY', 'LOOKS', 'BERRY', 'TABLE', 'TIRED', 'BAKER', 'TIGER', 'PHONE', 'PARTY', 'TIMER', 'bossy', 'boxer', 'bunny', 'solid', 'cheer', 'smile', 'angry', 'timid', 'cloud', 'check', 'bliss', 'tough', 'peace', 'water', 'house', 'voice', 'bunny', 'buddy', 'quail', 'sunny', 'ready', 'array', 'apple', 'never'], 
+     ['feliz', 'tarde', 'bueno', 'miedo', 'volar', 'comer', 'vivir', 'noche', 'zorro', 'casco', 'barco', 'fresa', 'mundo', 'pardo', 'gusto', 'ganas', 'tener', 'salir', 'reloj', 'gorro', 'pluma', 'papel', 'color', 'aviso', 'negro', 'claro', 'lunes', 'libre', 'valor', 'leche', 'lapiz', 'tengo', 'arroz', 'lavar', 'pedir'],
+     ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'piano', 'fleur', 'pizza', 'glace', 'laver', 'doigt']
  ]
  let randomizer = Math.floor(Math.random() * (triwordle.flat().length)   );
- let wordle = triwordle.flat()[randomizer].toUpperCase();
+ let bordle = triwordle.flat()[randomizer].toUpperCase();
+ let wordle = 'SUPER'
 
 let gameRows = [
     ['','','','',''],
@@ -25,23 +26,32 @@ let gameRows = [
 let showLang = () => {
   if (langSeen == false) {  if (triwordle[0].includes(wordle.toLowerCase()) || triwordle[0].includes(wordle.toUpperCase())) {
         console.log('English!');
-        let languageBox = document.createElement('p');
-        languageBox.textContent = 'The Wordle is in English : D'
-        languageDisplay.append(languageBox);
+        //showMessage('The Wordle is in English : D')
+        let messageBox = document.createElement('p');
+        messageBox.textContent = 'The Wordle is in English : D'
+        messageDisplay.append(messageBox);
         langSeen = true;
+        setTimeout(() => messageDisplay.removeChild(messageBox), 3000)
+
+        
         
     } else if (triwordle[1].includes(wordle.toLowerCase()) || triwordle[1].includes(wordle.toUpperCase())) {
         console.log('¡Español!');
-        let languageBox = document.createElement('p');
-        languageBox.textContent = 'El Wordle está en español : D'
-        languageDisplay.append(languageBox);
+       // showMessage('El Wordle está en español : D')
+        let messageBox = document.createElement('p');
+        messageBox.textContent = 'El Wordle está en español : D'
+        messageDisplay.append(messageBox);
         langSeen = true;
+        setTimeout(() => messageDisplay.removeChild(messageBox), 3000)
+
     } else {
         console.log('Francais!');
-        let languageBox = document.createElement('p');
-        languageBox.textContent = 'Le Wordle, c\'est francais : D'
-        languageDisplay.append(languageBox);
+        // showMessage('Le Wordle, c\'est français : D')
+        let messageBox = document.createElement('p');
+        messageBox.textContent = 'Le Wordle, c\'est français : D'
+        messageDisplay.append(messageBox);
         langSeen = true;
+        setTimeout(() => messageDisplay.removeChild(messageBox), 3000)
     }
    }
 }
@@ -86,6 +96,7 @@ let checkRow = () => {
         console.log('guess is ' + game);
        flipTile();
         if (wordle == game) {
+         
             showMessage('Great job! ¡Buen trabajo! Bon travail!');
             console.log('woo!')
             isGameOver = true;
@@ -94,12 +105,14 @@ let checkRow = () => {
         } else {
             if (currentRow >=5) {
                 isGameOver = true;
+               
                 showMessage('Game over. Fin del juego. Fin du jeu. Wordle = ' + wordle);
-                //showMessage('Wordle = ' + wordle)
                 seen = true;
                 return;
             } if (currentRow < 5) {
                 currentRow++;
+                langSeen = false;
+                showLang();
                 currentTile = 0;
                 
             }
@@ -117,8 +130,8 @@ let showMessage = (message) => {
 }
 
 
-let addColorToKey = (x, color) => {
-    let key = document.getElementById(x);
+let addColorToKey = (letter, color) => {
+    let key = document.getElementById(letter);
     key.classList.add(color);
 }
 
@@ -176,11 +189,11 @@ gameRows.forEach((gameRow, gameRowIndex) => {
 })
 
 
-keys.forEach(keyId => {
+keys.forEach(key => {
     let buttonElement = document.createElement('button');
-    buttonElement.textContent = keyId;
-    buttonElement.setAttribute('id', keyId);
-    buttonElement.addEventListener('click', () => handleClick(keyId));
+    buttonElement.textContent = key;
+    buttonElement.setAttribute('id', key);
+    buttonElement.addEventListener('click', () => handleClick(key));
     keyboard.append(buttonElement)
 })
 

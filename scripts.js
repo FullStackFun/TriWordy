@@ -11,8 +11,7 @@ let triwordle = [
      ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'piano', 'fleur', 'pizza', 'glace', 'laver', 'doigt']
  ]
  let randomizer = Math.floor(Math.random() * (triwordle.flat().length)   );
- let bordle = triwordle.flat()[randomizer].toUpperCase();
- let wordle = 'SUPER'
+ let wordle = triwordle.flat()[randomizer].toUpperCase();
 
 let gameRows = [
     ['','','','',''],

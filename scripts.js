@@ -7,11 +7,16 @@ let keys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'
 
 let triwordle = [
     ['SUPER', 'HAPPY', 'LOOKS', 'BERRY', 'TABLE', 'TIRED', 'BAKER', 'TIGER', 'PHONE', 'PARTY', 'TIMER', 'bossy', 'boxer', 'bunny', 'solid', 'cheer', 'smile', 'angry', 'timid', 'cloud', 'check', 'bliss', 'tough', 'peace', 'water', 'house', 'voice', 'bunny', 'buddy', 'quail', 'sunny', 'ready', 'array', 'apple', 'never', 'today', 'sweet', 'slide', 'squid', 'bench', 'feast', 'found', 'pound', 'towel', 'flame', 'blush', 'blaze'], 
-     ['feliz', 'tarde', 'bueno', 'miedo', 'volar', 'comer', 'vivir', 'noche', 'zorro', 'casco', 'barco', 'fresa', 'mundo', 'pardo', 'gusto', 'ganas', 'tener', 'salir', 'reloj', 'gorro', 'pluma', 'papel', 'color', 'aviso', 'negro', 'claro', 'lunes', 'libre', 'valor', 'leche', 'lapiz', 'tengo', 'arroz', 'lavar', 'pedir', 'arbol', 'mirar', 'medir', 'brazo', 'tallo', 'poema', 'tocar', 'tirar', 'traer', 'cerca'],
-     ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'piano', 'fleur', 'pizza', 'glace', 'laver', 'doigt', 'chant', 'neige', 'fuite', 'coupe', 'coude', 'soupe', 'chose', 'verre', 'boire', 'pomme']
+     ['feliz', 'tarde', 'bueno', 'miedo', 'volar', 'comer', 'vivir', 'noche', 'zorro', 'casco', 'barco', 'fresa', 'mundo', 'pardo', 'gusto', 'ganas', 'tener', 'salir', 'reloj', 'gorro', 'pluma', 'papel', 'color', 'aviso', 'negro', 'claro', 'lunes', 'libre', 'valor', 'leche', 'lapiz', 'tengo', 'arroz', 'lavar', 'pedir', 'arbol', 'mirar', 'medir', 'brazo', 'tallo', 'poema', 'tocar', 'tirar', 'traer', 'cerca', 'chico', 'chica'],
+     ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'piano', 'fleur', 'pizza', 'glace', 'laver', 'doigt', 'chant', 'neige', 'fuite', 'coupe', 'coude', 'soupe', 'chose', 'verre', 'boire', 'pomme', 'pince', 'brune']
  ]
  let randomizer = Math.floor(Math.random() * (triwordle.flat().length)   );
  let wordle = triwordle.flat()[randomizer].toUpperCase();
+
+ console.log(triwordle[0].length, 'English')
+ console.log(triwordle[1].length, 'Spanish')
+ console.log(triwordle[2].length, 'French')
+
 
 let gameRows = [
     ['','','','',''],

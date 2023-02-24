@@ -1,5 +1,6 @@
 * {
     color: white;
+    
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
 }
@@ -155,6 +156,12 @@ a {
     color: #301934 !important;
     text-decoration: none;
     }
+
+.popup:hover {
+    font-size: 1.25rem;
+    font-weight: bolder;
+    color: #b59f3a;
+}
          
 .ending {
     max-width: 500px;

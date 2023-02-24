@@ -6,9 +6,10 @@ let languageDisplay = document.querySelector('.language-box');
 let keys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Backspace', 'Enter'];
 
 let triwordle = [
-    ['SUPER', 'HAPPY', 'LOOKS', 'BERRY', 'TABLE', 'TIRED', 'BAKER', 'TIGER', 'PHONE', 'PARTY', 'TIMER', 'bossy', 'boxer', 'bunny', 'solid', 'cheer', 'smile', 'angry', 'timid', 'cloud', 'check', 'bliss', 'tough', 'peace', 'water', 'house', 'voice', 'bunny', 'buddy', 'quail', 'sunny', 'ready', 'array', 'apple', 'never', 'today', 'sweet', 'slide', 'squid', 'bench', 'feast', 'found', 'pound', 'towel', 'flame', 'blush', 'blaze', 'blurt', 'notes', 'piano', 'lucid', 'zebra', 'blink'], 
-     ['feliz', 'tarde', 'bueno', 'miedo', 'volar', 'comer', 'vivir', 'noche', 'zorro', 'casco', 'barco', 'fresa', 'mundo', 'pardo', 'gusto', 'ganas', 'tener', 'salir', 'reloj', 'gorro', 'pluma', 'papel', 'color', 'aviso', 'negro', 'claro', 'lunes', 'libre', 'valor', 'leche', 'lapiz', 'tengo', 'arroz', 'lavar', 'pedir', 'arbol', 'mirar', 'medir', 'brazo', 'tallo', 'poema', 'tocar', 'tirar', 'traer', 'cerca', 'chico', 'chica', 'verde', 'nariz', 'adios', 'mucho', 'bicho', 'turno'],
-     ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'vente', 'fleur', 'pizza', 'glace', 'laver', 'doigt', 'chant', 'neige', 'fuite', 'coupe', 'coude', 'soupe', 'chose', 'verre', 'boire', 'pomme', 'pince', 'brune', 'rouge', 'jaune', 'adieu', 'frais', 'droit', 'jeune']
+   ['SUPER', 'HAPPY', 'LOOKS', 'BERRY', 'TABLE', 'TIRED', 'BAKER', 'TIGER', 'PHONE', 'PARTY', 'TIMER', 'bossy', 'boxer', 'bunny', 'solid', 'cheer', 'smile', 'angry', 'timid', 'cloud', 'check', 'bliss', 'tough', 'peace', 'water', 'house', 'voice', 'bunny', 'buddy', 'quail', 'sunny', 'ready', 'array', 'apple', 'never', 'today', 'sweet', 'slide', 'squid', 'bench', 'feast', 'found', 'pound', 'towel', 'flame', 'blush', 'blaze', 'blurt', 'notes', 'piano', 'lucid', 'zebra', 'blink', 'swift', 'treat', 'prion', 'stove', 'beans', 'bingo'], 
+     ['feliz', 'tarde', 'bueno', 'miedo', 'volar', 'comer', 'vivir', 'noche', 'zorro', 'casco', 'barco', 'fresa', 'mundo', 'pardo', 'gusto', 'ganas', 'tener', 'salir', 'reloj', 'gorro', 'pluma', 'papel', 'color', 'aviso', 'negro', 'claro', 'lunes', 'libre', 'valor', 'leche', 'lapiz', 'tengo', 'arroz', 'lavar', 'pedir', 'arbol', 'mirar', 'medir', 'brazo', 'tallo', 'poema', 'tocar', 'tirar', 'traer', 'cerca', 'chico', 'chica', 'verde', 'nariz', 'adios', 'mucho', 'bicho', 'turno', 'flaco', 'gordo', 'creer', 'remar', 'burro', 'carta'],
+     ['pouce', 'matin', 'mardi', 'lundi', 'trois', 'tigre', 'amour', 'vivre', 'chien', 'vache', 'plume', 'plage', 'payer', 'lapin', 'froid', 'chaud', 'blanc', 'heure', 'pluie', 'frigo', 'livre', 'champ', 'plein', 'vider', 'arbre', 'ombre', 'voler', 'fille', 'nuage', 'vente', 'fleur', 'pizza', 'glace', 'laver', 'doigt', 'chant', 'neige', 'fuite', 'coupe', 'coude', 'soupe', 'chose', 'verre', 'boire', 'pomme', 'pince', 'brune', 'rouge', 'jaune', 'adieu', 'frais', 'droit', 'jeune', 'mince', 'jolie', 'roche', 'grise', 'avoir', 'carte'] 
+
  ]
  let randomizer = Math.floor(Math.random() * (triwordle.flat().length)   );
  let wordle = triwordle.flat()[randomizer].toUpperCase();
@@ -154,7 +155,7 @@ let flipTile = () => {
 
     })
         game.forEach((game, index) => {
-            if (game.letter == wordle[index]) {
+            if (game.letter.toLowerCase() == wordle[index] || game.letter.toUpperCase() == wordle[index]) {
                 game.color = 'green-overlay';
                 checkWordle = checkWordle.replace(game.letter, '');
             }
